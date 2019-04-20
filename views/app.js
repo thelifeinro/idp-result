@@ -9,6 +9,7 @@ app.controller('statsCtrl', function($scope){
        //data is an array of homeworks
        for(let i = 0; i<data.length; i++){
           let hw = data[i];
+          console.log(hw);
           let nume = hw.nume;
           let grupa = hw.grupa;
           let tema = hw.tema;
