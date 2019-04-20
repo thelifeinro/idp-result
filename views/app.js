@@ -17,7 +17,7 @@ app.controller('statsCtrl', function($scope){
        console.log('Data:' + data);
        //data is an array of homeworks
        for(let i = 0; i<data.length; i++){
-          let hw = data[data.length-1];
+          let hw = data[i];
           console.log(hw);
           let nume = hw.nume;
           let grupa = hw.grupa;
