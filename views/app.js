@@ -8,10 +8,15 @@ app.controller('statsCtrl', function($scope){
     socket.on('teme', function (json) {
       console.log('Received teme from server js');
       //clearing table to re-add stuff
+      tabBody=document.getElementById("tabel");
+      tabHead=document.getElementById("table-head");
+      tabBody.innerHTML='';
+      tabBody.appendChild(tabHead);
+
        data = JSON.parse(json);
        console.log('Data:' + data);
        //data is an array of homeworks
-       //for(let i = 0; i<data.length; i++){
+       for(let i = 0; i<data.length; i++){
           let hw = data[data.length-1];
           console.log(hw);
           let nume = hw.nume;
@@ -20,7 +25,7 @@ app.controller('statsCtrl', function($scope){
 
           addRow(nume, grupa, tema);
 
-       //}
+       }
 /*       var a = parseInt(data.a || 0);
        var b = parseInt(data.b || 0);
 
