@@ -1,11 +1,14 @@
 var app = angular.module('catsvsdogs', []);
 var socket = io.connect({transports:['polling']});
 
+console.log('this is app js');
 
 app.controller('statsCtrl', function($scope){
   var updateScores = function(){
     socket.on('teme', function (json) {
+      console.log('Received teme from server js');
        data = JSON.parse(json);
+       console.log('Data:' + data);
        //data is an array of homeworks
        for(let i = 0; i<data.length; i++){
           let hw = data[i];
