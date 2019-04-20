@@ -42,7 +42,7 @@ async.retry(
 );
 
 function getTeme(client) {
-  client.query('SELECT nume, grupa, tema FROM votes', [], function(err, result) {
+  client.query('SELECT nume, grupa, tema FROM teme', [], function(err, result) {
     if (err) {
       console.error("Error performing query: " + err);
     } else {
